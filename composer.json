@@ -54,7 +54,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "creocoder\\flysystem\\": "src"
+            "tkanstantsin\\yii\\flysystem\\": "src"
         }
     }
 }
