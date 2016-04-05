@@ -58,10 +58,12 @@ abstract class Filesystem extends \CComponent
      */
     public $config;
     /**
+     * Cache component name.
      * @var string|null
      */
     public $cache;
     /**
+     * Cache key for flysystem.
      * @var string
      */
     public $cacheKey = 'flysystem';
@@ -73,6 +75,7 @@ abstract class Filesystem extends \CComponent
      * @var string|null
      */
     public $replica;
+
     /**
      * @var \League\Flysystem\FilesystemInterface
      */
@@ -123,5 +126,13 @@ abstract class Filesystem extends \CComponent
     public function __call($method, $parameters)
     {
         return call_user_func_array([$this->filesystem, $method], $parameters);
+    }
+
+    /**
+     * @return \League\Flysystem\FilesystemInterface
+     */
+    public function getFilesystem()
+    {
+        return $this->filesystem;
     }
 }
